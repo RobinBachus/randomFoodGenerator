@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Random food generator</title>
+</head>
+<body>
+    <h1 id="title">The Random FOOD Generator!</h1>
+
+    <form>
+        <label for="postalCode">Postal Code &nbsp;</label>
+        <label for="countries"><input placeholder="1234" value="9120" id="postalCode"></label>
+            <<select id="countries">
+                <option value="BE">BE</option>
+                <option value="NL">NL</option>
+                <option value="DE">DE</option>
+            </select><br>
+        <label for="searchTerm">Search Term&nbsp;</label>
+            <input placeholder="pizza" value="pizza" id="searchTerm">
+
+        <p>Include open/closed restaurants:</p>
+        <label for="openedResCheck">Opened
+            <input type="checkbox" id="openedResCheck" checked>
+        </label>
+        <label> Closed
+            <input type="checkbox" id="closedResCheck">
+        </label>
+        <p id="noResultWarning" style="color:#e92424;" hidden>This configuration will give no results!</p>
+
+    </form> <br>
+
+    <button id="getFoodListBtn" onclick="getFood()">Generate FOOD List!</button>
+    <button id="getNewFoodItemBtn" onclick="getRndFoodItem()" disabled>Try another item!</button>
+    <div id="progressBar" hidden>
+        <div id="progressBarValue">0%</div>
+    </div>
+
+    <p id="foodItem"></p>
+    <script src="getFood.js"></script>
+</body>
+</html>

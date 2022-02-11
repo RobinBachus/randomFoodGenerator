@@ -1,0 +1,21 @@
+#progressBar {
+    background-color: lightgray;
+    border-radius: 15px;
+    /* (height of inner div) / 2 + padding */
+    padding: 2px;
+    width: 261px;
+    margin-top: 10px;
+}
+
+#progressBarValue {
+    padding: 5px 0;
+    color: white;
+    text-align: center;
+    height: 8px;
+}
+
+#progressBar>div {
+    background-color: greenyellow;
+    height: 10px;
+    border-radius: 10px;
+}
