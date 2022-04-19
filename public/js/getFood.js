@@ -77,23 +77,34 @@ async function getFood() {
         document.getElementById("foodItem").innerHTML = "Request status: " + json.status;
         return "Request status: " + json.status;
     }
+
     return getRndFoodItem();
 }
 
 function updateProgress() {
     document.getElementById("progressBar").hidden = false;
-    sleep(250).then(r => {
+    sleep(250).then( () => {
         console.log("updater started");
         updater = setInterval(async () => {
             const data = {
                 type: "progressRequest"
             }
             const response = await makePOSTRequest(data);
+
             const json = await response.json();
-            console.log(await json.progress + "/" + await json.total);
+            let style = [
+                "color: #FFF",
+                "background-color: grey",
+                "padding: 2px 4px",
+                "border-radius: 2px"
+            ];
+            style = style.join(";") + ";";
+            console.log(`server response: %c${await json.progress + "/" + await json.total}`, style);
+
             let progress = json.progress / json.total;
             progressBar.style.width = `${Math.round(progress * 261)}px`;
             progressBar.innerHTML = `${Math.round(progress * 100)}%`;
+
         }, 1000);
     });
 }
@@ -114,12 +125,13 @@ async function makePOSTRequest(data) {
     const options = {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
         body: JSON.stringify(data)
     }
     console.log(data.type + " request sent, awaiting response...")
-    return await fetch('/api', options);
+    //return await fetch('http://140.82.59.10:8000/api/', options);
+    return await fetch('api/', options);
 }
 
 async function checkInputAvailability() {

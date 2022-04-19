@@ -105,3 +105,12 @@ dist
 
 # Code environment files
 .idea/
+
+# Favicon original image
+public/favicon.png
+
+# Test Folder
+tests/
+
+# Cert files
+certs/

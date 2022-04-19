@@ -1,12 +1,12 @@
 {
   "name": "takeaway",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A website that generates random food items from TakeAway.com",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc -w --skipLibCheck",
-    "server": "nodemon --ignore *.json server.js"
+    "server": "nodemon --ignore *.json server/server.js"
   },
   "keywords": [
     "Takeaway",
@@ -17,6 +17,7 @@
   "author": "Robin Bachus",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "nodemon": "^2.0.15",
     "prompt-sync": "^4.1.6",

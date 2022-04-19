@@ -2,20 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="stylesheet.css">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" href="style/stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Random food generator</title>
 </head>
 <body>
     <h1 id="title">The Random FOOD Generator!</h1>
 
     <form>
-        <label for="postalCode">Postal Code &nbsp;</label>
-        <label for="countries"><input placeholder="1234" value="9120" id="postalCode"></label>
-            <<select id="countries">
-                <option value="BE">BE</option>
-                <option value="NL">NL</option>
-                <option value="DE">DE</option>
-            </select><br>
+        <label for="countries">
+            <label for="postalCode">Postal Code &nbsp;</label>
+            <input placeholder="1234" value="9120" id="postalCode">
+        </label>
+        <select id="countries">
+            <option value="BE">BE</option>
+            <option value="NL">NL</option>
+            <option value="DE">DE</option>
+        </select><br>
         <label for="searchTerm">Search Term&nbsp;</label>
             <input placeholder="pizza" value="pizza" id="searchTerm">
 
@@ -37,6 +41,6 @@
     </div>
 
     <p id="foodItem"></p>
-    <script src="getFood.js"></script>
+    <script src="js/getFood.js"></script>
 </body>
 </html>
